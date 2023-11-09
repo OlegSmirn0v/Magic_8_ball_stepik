@@ -2,18 +2,18 @@ from random import choice
 
 print('Hello! I am a magic 8 ball. I can answer your questions')
 
+ANSWERS = ["Undoubtedly", "I think yes", "It’s not clear yet, try again", "Don’t even think",
+           "Foregone conclusion", "Most likely", "Ask later", "My answer is no",
+           "No doubt", "Good prospects", "It's better not to tell", "According to my data - no",
+           "You can be sure of this", "Yes", "Concentrate and ask again", "Very doubtful"]
+
 
 def get_answer(question):
     question = clear_text_question(question)
     if question.isspace() or question == '' or question.isdigit():
         return 'No question - no answer.'
 
-    answers = ["Undoubtedly", "I think yes", "It’s not clear yet, try again", "Don’t even think",
-               "Foregone conclusion", "Most likely", "Ask later", "My answer is no",
-               "No doubt", "Good prospects", "It's better not to tell", "According to my data - no",
-               "You can be sure of this", "Yes", "Concentrate and ask again", "Very doubtful"]
-
-    return f'To the question "{question}" I answer: {choice(answers)}'
+    return f'To the question "{question}" I answer: {choice(ANSWERS)}'
 
 
 def clear_text_question(text):
